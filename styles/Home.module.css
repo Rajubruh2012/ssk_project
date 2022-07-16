@@ -1,0 +1,473 @@
+.slide {
+  width: 200vw;
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 200vw;
+  /* min-width: 100vw; */
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+}
+
+.outerWrapper {
+  width: 100vh;
+  height: 100vw;
+  /* min-width: 100vh;
+  min-height: 100vw; */
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* .one {
+  background: url("bkg2.png");
+  background-size: auto 100vh;
+  background-repeat: repeat-x;
+  width: 400vw;
+} */
+
+.pageTransitions{
+  position: relative;
+}
+
+.gridContainer {
+  width: 100%;
+  padding-left: 28px;
+  padding-right: 28px;
+  max-width: 85rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardOverview {
+  padding-bottom: 15.625rem;
+}
+
+@media only screen and (min-width: 45em) {
+  .gridContainer {
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .gridContainer {
+    padding-left: 85px;
+    padding-right: 85px;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  @supports (display:grid) {
+    .cardOverview {
+      max-width: 100%;
+      display: flex;
+      height: calc(100vh - 6.875rem);
+      padding-top: 5.5vmin;
+      padding-bottom: 9vmin;
+      position: relative;
+      overflow-x: auto;
+      overflow: overlay;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+  }
+}
+
+.cardOverviewContentStart {
+  padding-top: 3.75rem;
+  padding-bottom: 6.25rem;
+}
+
+@media only screen and (min-width: 64em) {
+  @supports (display:grid) {
+    .cardOverviewContentStart {
+      width: 44vw;
+      padding: 0 8vw 0 0;
+      margin-right: 4vw;
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: calc((100vw - 85rem) / 2);
+    }
+  }
+}
+
+.cardOverviewContentStartHeading{
+  text-decoration: none;
+}
+
+.heading2 {
+  font-size: 1.75rem;
+  line-height: 1.143;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 45em) {
+  .heading2 {
+    font-size: 3rem;
+    line-height: 1.083;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .heading2 {
+    font-size: 3.5rem;
+    line-height: 1.071;
+  }
+}
+
+.cardOverviewContentStartIntro {
+    margin-top: 2.5rem;
+}
+
+@media only screen and (min-width: 64em) {
+  @supports (display:grid) {
+    .cardOverviewContentStartIntro {
+      padding-right: 8vw;
+    }
+  }
+}
+
+.cardOverviewContentStart .ctaList {
+  margin-top: 1.875rem;
+}
+
+.ctaListItem+.ctaListItem {
+  margin-top: 1.25rem;
+}
+
+.link {
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+}
+
+.link_Icon_Left, .link_Icon_Right {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link_Icon_Left {
+  flex-direction: row-reverse;
+}
+
+#book_icon[class^=icon_] {
+  fill: currentColor;
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.link_Icon_Left>svg, .link_Icon_Right>svg {
+  transition: transform .1s ease-out;
+}
+
+.link_Icon_Left>svg {
+  margin-right: 0.625rem;
+}
+
+.link_Icon_Left:hover {
+  margin-left: 1rem;
+  transition: all .2s ease-out;
+}
+
+#book_icon[class^=icon_][class*=_Medium] {
+  width: 1rem;
+  height: 1rem;
+}
+
+#book_icon[class^=icon_] {
+  width: 0.875rem;
+  height: 0.875rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.teaserCard {
+  color: #fff;
+  position: relative;
+}
+
+.cardOverview .teaserCard {
+  width: 100%;
+  height: 0;
+  padding-bottom: 137.5%;
+}
+
+/* .link_Icon_Right:not(.link_Icon_No_Animation):hover>svg {
+  transform: translateX(0.313rem);
+} */
+
+@media only screen and (min-width: 64em) {
+  @supports (display:grid) {
+    .cardOverview .teaserCard {
+      width: 0;
+      height: 100%;
+      padding-bottom: 0;
+      padding-right: calc(.54545455 * calc(calc(100vh - 6.875rem) - 5.5vmin - 9vmin));
+      position: relative;
+    }
+  }
+}
+
+.teaserCardImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.teaserCardImage,
+.teaserCardImage:after,
+.teaserCardImage img {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.teaser>* {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.teaserCardImage:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 67%);
+}
+
+.objectFitContainer {
+  position: relative;
+}
+
+.objectFitContainer.cover {
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.teaserCardImage .focusPointImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  transition: transform .4s cubic-bezier(.23,1,.32,1);
+}
+
+.lazyImage {
+  opacity: 1;
+  transition: opacity .2s ease;
+}
+
+.objectFitContainer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.objectFitContainer.cover img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.teaserCardContent {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.teaserCard:hover .teaserCardImage .focusPointImage {
+  transform: scale(1.075);
+}
+
+.cardOverview .teaserCard:hover .teaserCardImage .focusPointImage {
+  transform: scale(1.05);
+}
+
+@media only screen and (min-width: 64em) {
+  @supports (display:grid) {
+    .teaserCardContent {
+      padding: 1.875rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  @supports (display:grid) {
+    .cardOverview .teaserCard .teaserCardContent {
+      padding: 4.5vmin;
+    }
+  }
+}
+
+.teaserCardContent>* {
+  color: #fff;
+}
+
+.teaserCardLabel {
+  font-size: .875rem;
+  margin-bottom: 0.625rem;
+}
+
+.heading5 {
+  font-size: 1.5rem;
+  line-height: 1.167;
+  font-weight: 400;
+}
+
+.teaserCardText {
+  font-size: .875rem;
+  margin-top: 0.938rem;
+}
+
+@media only screen and (min-width: 64em) {
+  .teaserCardText {
+    margin-top: 1.25rem;
+  }
+}
+
+.teaserCardContent .link {
+  margin-top: 1.25rem;
+}
+
+@media only screen and (min-width: 64em) {
+  @supports (display:grid) {
+    .teaserCardContent .link {
+      margin-top: 1.875rem;
+    }
+  }
+}
+
+.cardOverviewContentEnd {
+  padding-top: 6.25rem;
+}
+
+@media only screen and (min-width: 64em) {
+  @supports (display:grid) {
+    .cardOverviewContentEnd {
+      width: 92.5vw;
+      flex: 0 0 auto;
+      padding-top: 0;
+      padding-left: 10vw;
+      padding-right: 32vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+.heading4 {
+  font-size: 1.5rem;
+  line-height: 1.167;
+  font-weight: 400;
+}
+
+.cardOverviewContentEndHeading {
+  margin-bottom: 5.625rem;
+}
+
+@media only screen and (min-width: 45em) {
+  .heading4 {
+    font-size: 2rem;
+    line-height: 1.125;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  @supports (display:grid) {
+    .cardOverviewContentEndHeading {
+      margin-bottom: 1.25rem;
+    }
+  }
+}
+
+.cardOverview .logoBlock {
+  font-size: .875rem;
+  margin-top: 3.75rem;
+}
+
+@media only screen and (min-width: 64em) {
+  .cardOverview .logoBlock {
+    margin-top: 7.5rem;
+  }
+}
+
+.heading5 {
+  font-size: 1.5rem;
+  line-height: 1.167;
+  font-weight: 400;
+}
+
+.logoBlockMarkdown, .logoBlockTitle {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 64em) {
+
+  .logoBlockMarkdown,
+  .logoBlockTitle {
+    margin-bottom: 1.875rem;
+  }
+}
+
+.cardOverview .logoBlockTitle {
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.logoBlockLogos {
+  margin-left: -3.125rem;
+  margin-bottom: -1.875rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.logoBlockMarkdown+.logoBlockLogos, .logoBlockTitle+.logoBlockLogos {
+  margin-top: 1.5rem;
+}
+
+.cardOverview .logoBlockLogos {
+  display: block;
+  margin: 0;
+}
+
+@media only screen and (min-width: 64em){
+.logoBlockMarkdown+.logoBlockLogos, .logoBlockTitle+.logoBlockLogos {
+    margin-top: 3.125rem;
+}}
+
+@media only screen and (min-width: 64em){
+.cardOverview .logoBlockLogos {
+    display: flex;
+}}
+
+.cardOverview .logoBlockMarkdown+.logoBlockLogos,
+.cardOverview .logoBlockTitle+.logoBlockLogos {
+  margin-top: 1.875rem;
+}
